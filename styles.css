@@ -1,0 +1,438 @@
+:root{
+  --bg:#000000;
+  --fg:#FFFFFF;
+  --accent:#d555a4;
+  --max-width:1400px;
+}
+
+*{box-sizing:border-box}
+html,body{
+  height:100%;
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:'Roboto',sans-serif;
+}
+
+a{color:var(--fg);text-decoration:none}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75); /* Fondo semitransparente elegante */
+  backdrop-filter: blur(8px); /* Desenfoque tipo “glass” */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  z-index: 1000; /* Asegura que quede encima del contenido */
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+header img {
+  height: 48px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+header img:hover {
+  transform: scale(1.05);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100px; 
+}
+
+.logo img {
+  height: 80px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+nav ul {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Projects */
+.projects{
+  max-width:var(--max-width);
+  margin:30px auto;
+  padding:0 20px 60px 20px;
+}
+.projects h2{margin:6px 0 18px 0;font-weight:500}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+
+.card{
+  border-radius:8px;
+  overflow:hidden;
+  position:relative;
+}
+.img-container{
+  position:relative;
+  overflow:hidden;
+  border-radius:8px;
+}
+.img-container img{
+  width:100%;
+  height:380px;
+  object-fit:cover;
+  display:block;
+  transition:transform .4s ease;
+}
+.img-container:hover img{
+  transform:scale(1.05);
+}
+
+/* Overlay animado */
+.overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  transition:opacity .3s ease;
+}
+.overlay a{
+  color:#fff;
+  font-weight:500;
+  font-size:18px;
+  padding:80px 96px;
+  border-radius:6px;
+  transition:background .3s ease;
+}
+.overlay a:hover{
+  color:#fff;
+}
+.img-container:hover .overlay{
+  opacity:1;
+}
+
+/* About */
+.about-section{
+  max-width:var(--max-width);
+  margin:20px auto 50px auto;
+  padding:0 20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+.about-image img{
+  width:100%;
+  height:auto;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.05);
+}
+.about-text h2{margin-bottom:10px;font-weight:500}
+.about-text p{line-height:1.6;color:rgba(255,255,255,.95);margin-bottom:10px}
+
+/* Footer */
+footer{
+  background:transparent;
+  border-top:1px solid rgba(255,255,255,0.03);
+  padding:28px 60px;
+  margin-top:40px;
+}
+.footer-inner{
+  max-width:var(--max-width);
+  margin:0 auto;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+}
+.socials{display:flex;gap:12px;align-items:center}
+.socials a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:42px;
+  height:42px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.01);
+}
+.socials svg{width:20px;height:20px;display:block}
+.footer-info{opacity:.95;font-size:14px}
+.copyright{font-size:13px;opacity:.8}
+
+/* Responsive */
+@media (max-width:980px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .about-section{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  header{padding:18px}
+  .logo{font-size:18px}
+  nav ul{gap:12px}
+  .grid{grid-template-columns:1fr}
+}
+
+/* Banner con video de fondo */
+.banner {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 0 auto 100px auto; /* espacio debajo antes de proyectos */
+  max-width: var(--max-width);
+}
+
+.banner-container {
+  position: relative;
+  width: 100%;
+  height: 720px; /* ajustá según prefieras o usá aspect-ratio */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* video como fondo absoluto */
+.banner-bg {
+  position: absolute;
+  inset: 0;            /* top:0; right:0; bottom:0; left:0; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 0;
+  pointer-events: none; /* evita que el video capture clicks */
+}
+
+/* Texto sobre el video */
+.banner-text {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  z-index: 2;
+  max-width: 540px;
+  padding: 20px 0;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+
+.banner-text h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0 0 18px 0;
+}
+
+.banner-text h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 6px 0;
+}
+
+.banner-text p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  opacity: 0.95;
+}
+
+/* sombra para legibilidad */
+.banner-text h1,
+.banner-text h2,
+.banner-text p {
+  text-shadow: 0 6px 18px rgba(0,0,0,0.5);
+}
+
+/* Responsivo */
+@media (max-width: 980px) {
+  .banner-container { height: 520px; }
+  .banner-text { left: 6%; max-width: 70%; }
+  .banner-text h1 { font-size: 1.6rem; }
+}
+
+@media (max-width: 520px) {
+  .banner-container { height: 380px; }
+  .banner-text { left: 6%; bottom: 8%; max-width: 86%; padding: 16px 0; }
+  .banner-text h1 { font-size: 1.25rem; }
+  .banner-text h2 { font-size: 1rem; }
+}
+
+/* Animación de entrada suave */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* empieza un poco más abajo */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%); /* vuelve al centro */
+  }
+}
+
+/* Responsivo: centrado completo en pantallas pequeñas */
+@media (max-width: 600px) {
+  .banner-text {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 90%;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -30%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+.socials a svg {
+  fill: white !important;
+  transition: transform 0.2s ease;
+}
+
+.socials a:hover svg {
+  transform: scale(1.1);
+}
+
+section#projects {
+  border-bottom: 3px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 60px; /* espacio antes del borde */
+  margin-bottom: 60px;  /* espacio después del borde */
+}
+
+/* BOTÓN DESTACADO (Contacto) */
+.btn-contact {
+  padding: 8px 18px;
+  border: 1px solid var(--accent);
+  border-radius: 20px;
+  color: var(--accent);
+  transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+  background: var(--accent);
+  color: var(--fg);
+  transform: translateY(-2px);
+}
+
+/* CONTACT SECTION */
+.contact-section {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0.03));
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-section h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.contact-section p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 32px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* Botón principal */
+.contact-btn {
+  background: var(--accent);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: #ff69b4;
+  transform: translateY(-2px);
+}
+
+/* Íconos sociales */
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: white;
+  font-size: 1.2rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-icon:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .contact-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-behavior: smooth;
+  padding-top: 80px; /* Ajustá según la altura real de tu header */
+}

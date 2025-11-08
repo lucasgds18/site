@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+<!-- Favicon modo claro -->
+<link rel="icon" type="image/png" href="img/fav-light.png" media="(prefers-color-scheme: light)">
+
+<!-- Favicon modo oscuro -->
+<link rel="icon" type="image/png" href="img/fav-dark.png" media="(prefers-color-scheme: dark)">
+
+
+  <title>Portafolio</title>
+
+  <!-- Roboto font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Enlace al CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="#home"><img src="img/LogoHM-08.png" alt="logo"></a>
+</div>
+    <nav aria-label="Principal navegación">
+      <ul>
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#contact" class="btn-contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+<!-- Banner -->
+<section id="home" class="banner" role="banner" aria-label="Banner principal">
+  <div class="banner-container">
+    <video
+      class="banner-bg"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="img/banner-poster.jpg"
+    >
+      <source src="video/Ejemplo.mp4" type="video/mp4">
+      <!-- Opcional: añade una versión webm para mejor compatibilidad -->
+      <!-- <source src="video/Ejemplo.webm" type="video/webm"> -->
+      Tu navegador no soporta el elemento de vídeo.
+    </video>
+
+    <div class="banner-text" aria-hidden="false">
+      <h1>Formas e ideas,<br>al servicio de la<br>comunicación efectiva</h1>
+      <h2>Lucas de Souza</h2>
+      <p>Técnico en Diseño Gráfico</p>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Projects -->
+  <section id="projects" class="projects">
+
+    <div class="grid" aria-live="polite">
+      <article class="card">
+        <div class="img-container">
+          <img src="img/miniaturas/coliseo.png" alt="coliseo">
+          <div class="overlay">
+            <a href="proyecto1.html">Coliseo Fit Center</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="img-container">
+          <img src="img/miniaturas/geafold.png" alt="geafold">
+          <div class="overlay">
+            <a href="proyecto2.html">Geafold</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="img-container">
+          <img src="img/miniaturas/cle.png" alt="Proyecto 3">
+          <div class="overlay">
+            <a href="proyecto3.html">Afiches para Centro de Lenguas Extranjeras</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="img-container">
+          <img src="img/placeholder_A.png" alt="Proyecto 4">
+          <div class="overlay">
+            <a href="proyecto4.html">Señalética para Yatch Club Paysandú</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="img-container">
+          <img src="img/placeholder_A.png" alt="Proyecto 5">
+          <div class="overlay">
+            <a href="proyecto5.html">Mojifresh</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="img-container">
+          <img src="img/placeholder_A.png" alt="Proyecto 6">
+          <div class="overlay">
+            <a href="proyecto6.html">Otros Proyectos</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about-section">
+    <div class="about-image">
+      <img src="img/placeholder_A.png" alt="Foto personal placeholder">
+    </div>
+    <div class="about-text">
+      <h2>Bienvenidos a mi portafolio</h2>
+      <p>Soy Lucas, y el diseño es para mí un desafío donde encontrar la manera más efectiva de conectar con las personas, a traves de las formas y palabras, es el objetivo final. Planificación, investigación, desarrollo de ideas y ejecución.</p>
+      <p>Habilidades: Identidad visual, Ilustración digital, Maquetación digital.</p>
+      <p>Herramientas: Illustrator, Photoshop, InDesign, Clip Studio Paint</p>
+    </div>
+  </section>
+
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    <h2>¡Gracias por ver!</h2>
+    <p>Si te interesa trabajar conmigo, puedes enviarme un mensaje a través de mi correo electronico</p>
+
+
+    <div class="contact-links">
+      <a href="mailto:lucasgdesouza18@gmail.com" class="contact-btn">Enviame un correo</a>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer>
+  <div class="footer-inner">
+    <div class="footer-info">
+      <div style="font-weight:600;margin-bottom:12px">Contacto
+        <p>lucasgdesouza18@gmail.com </p>
+      </div>
+      <div class="socials">
+
+<!-- Instagram -->
+<a href="https://www.instagram.com/" aria-label="Instagram" title="Instagram" target="_blank">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+    <!-- contorno redondeado -->
+    <rect x="1.2" y="1.2" width="21.6" height="21.6" rx="5" ry="5" fill="none" stroke="white" stroke-width="1.6"/>
+    <!-- circulo central -->
+    <circle cx="12" cy="11.8" r="3.9" fill="none" stroke="white" stroke-width="1.6"/>
+    <!-- punto superior derecho -->
+    <circle cx="17.6" cy="6.4" r="1" fill="white"/>
+  </svg>
+</a>
+
+
+        <!-- LinkedIn -->
+        <a href="https://uy.linkedin.com/" aria-label="LinkedIn" title="LinkedIn" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white" aria-hidden="true">
+            <path d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.27 
+              107 0 82.7 0 53.64A53.64 53.64 0 0 1 53.64 
+              0a53.64 53.64 0 0 1 53.64 53.64c0 29.06-24.27 
+              53.36-53.44 53.36zM447.9 448h-92.68V302.4c0-34.7-.7-79.4-48.4-79.4-48.5 
+              0-55.9 37.9-55.9 77v148h-92.68V148.9h89V196h1.3c12.4-23.5 
+              42.7-48.4 87.9-48.4 94 0 111.4 61.9 111.4 
+              142.3V448z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    
+
+    <div style="min-width:140px;text-align:right">
+      <div class="copyright">©2025 <span id="year"></span> Lucas de Souza. Todos los derechos reservados.</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
